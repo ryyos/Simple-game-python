@@ -1,5 +1,6 @@
 from equipment import weapon_switch
 from equipment import armor_switch
+from equipment import fundamental
 from class_prog import Hero
 
 
@@ -17,20 +18,11 @@ chose = int(input('Input Your Choise : '))
 match chose:
     case 1:
         alexa = Hero('Alexa', 100, 17, 10, 50, 50)
-        print(f'Your Hero : Alexa')
-        print(f'Atrribute Your Hero : \n{alexa.__dict__}')
-        alexa.damage_up(weapon_switch(chose, alexa))
-        print(f'Atrribute Your Hero : \n{alexa.__dict__}')
+        fundamental(chose, alexa)
     case 2:
         zoldyck = Hero('Zoldyck', 120, 15, 7, 50, 50)
-        print('Your Hero : Zoldyck')
-        print(f'Atrribute Your Hero : \n{zoldyck.__dict__}')
-        zoldyck.damage_up(weapon_switch(chose, zoldyck))
-        print(f'Atrribute Your Hero : \n{zoldyck.__dict__}')
+        fundamental(chose, zoldyck)
 
     case 3:
         lux = Hero('Lux', 90, 20, 10, 60, 30)
-        print('Your Hero : Lux')
-        print(f'Atrribute Your Hero : \n{lux.__dict__}')
-        lux.damage_up(weapon_switch(chose, lux))
-        print(f'Atrribute Your Hero : \n{lux.__dict__}')
+        fundamental(chose, lux)
