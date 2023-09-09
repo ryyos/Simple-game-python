@@ -4,7 +4,6 @@ from class_prog import Hero
 def weapon_switch(chose, hero):
     print('='*50)
     print('Chose Your Weapon : ')
-    # print('1. Bow \n2. Sword \n3. Magic Ball\n' + '=' * 50)
     print('1. Bow          (Damage + 14 | Energy - 9)')
     print('2. Sword        (Damage + 16 | Energy - 11)')
     print('3. Magic Ball   (Damage + 20 | Mana - 13)')
@@ -25,7 +24,6 @@ def weapon_switch(chose, hero):
 def armor_switch(chose, hero):
     print('='*50)
     print('Chose Your armor : ')
-    # print('1. Radiant \n2. Guardiant \n3. Antiquiras\n' + '=' * 50)
     print('1. Radiant       (Defend + 14 | Health + 23)')
     print('2. Guardiant     (Defend +  6 | Health + 35)')
     print('3. Antiquiras    (Defend + 18 | Health + 19)')
@@ -47,10 +45,7 @@ def armor_switch(chose, hero):
 
 
 def fundamental(chose, name):
-    # print(f'Your Hero : {name}')
-    # print(f'Atrribute Your Hero : \n{name.__dict__}')
     name.damage_up(weapon_switch(chose, name))
     [health, armor] = armor_switch(chose, name)
     name.defend_up(health, armor)
-    # name.health_up(armor_switch(chose, name)[1])
     print(f'Atrribute Your Hero : \n{name.__dict__}')
