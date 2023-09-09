@@ -1,36 +1,7 @@
-class Hero:
-
-    jum_hero = 0
-    all_hero = []
-
-    def __init__(self, name, health, damage, defend, mana, energy):
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self.defend = defend
-        self.mana = mana
-        self.energy = energy
-
-        def health_up(plus):
-            self.health += plus
-
-        def damage_up(plus):
-            self.damage += plus
-
-        def defend_up(plus):
-            self.defend += plus
-
-        print(f'New Hero : {name}')
-        jum_hero += 1
-        Hero.all_hero.append(name)
-        print(f'All Hero : {Hero.all_hero}')
-
-        # def new_hero(name):
-
-
-class Weapon:
-    def __init__(self, plus):
-        Hero.damage_up(plus)
+from equipment import weapon_switch
+from equipment import armor_switch
+from equipment import fundamental
+from class_prog import Hero
 
 
 class Armor:
@@ -39,6 +10,19 @@ class Armor:
         hero.health_up(healthup)
 
 
-alexa = Hero('Alexa', 100, 17, 10, 50, 50)
-zoldyck = Hero('Zoldyck', 120, 15, 7, 50, 50)
-print(alexa.__dict__)
+print('='*50)
+print('Chose Hero')
+print('1. Alexa \n2. Zoldyck \n3. Lux \n' + '=' * 50)
+chose = int(input('Input Your Choise : '))
+
+match chose:
+    case 1:
+        alexa = Hero('Alexa', 100, 17, 10, 50, 50)
+        fundamental(chose, alexa)
+    case 2:
+        zoldyck = Hero('Zoldyck', 120, 15, 7, 50, 50)
+        fundamental(chose, zoldyck)
+
+    case 3:
+        lux = Hero('Lux', 90, 20, 10, 60, 30)
+        fundamental(chose, lux)
