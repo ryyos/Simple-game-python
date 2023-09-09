@@ -13,11 +13,12 @@ class Hero:
         Hero.all_hero.append(name)
         Hero.jum_hero += 1
 
-    def health_up(self, plus):
-        self.health += plus
+    # def health_up(self, plus):
+    #     self.health += plus
 
     def damage_up(self, plus):
         self.damage += plus
 
-    def defend_up(self, plus):
-        self.defend += plus
+    def defend_up(self, health, armor):
+        self.defend += armor
+        self.health += health
