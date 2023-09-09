@@ -6,7 +6,7 @@ def weapon_switch(chose, hero):
     print('Chose Your Weapon : ')
     print('1. Bow          (Damage + 14 | Energy - 9)')
     print('2. Sword        (Damage + 16 | Energy - 11)')
-    print('3. Magic Ball   (Damage + 20 | Mana - 13)')
+    print('3. Magic Ball   (Damage + 20 | Mana   - 13)')
     chose = int(input('Input Your Choise : '))
     match chose:
         case 1:
