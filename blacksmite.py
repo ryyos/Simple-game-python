@@ -2,6 +2,7 @@ from equipment import user
 from equipment import comp
 from class_prog import Hero
 from computer import computer
+from random import randint
 
 
 class Armor:
@@ -27,17 +28,32 @@ match chose:
         lux = Hero('Lux', 90, 20, 10, 60, 30)
         yusha = user.fundamental(chose, lux)
 
+print('='*50)
 print(f'Computer turn..')
 enemy = computer()
 
 while True:
+    print('='*50)
     print('1. Attack')
     print('2. Recovery')
     turn = int(input('Choise : '))
 
     if turn == 1:
+        print('ME')
         yusha.attack(enemy)
 
+    com = randint(1, 2)
+    if com == 1:
+        print('ENEMY')
+        enemy.attack(yusha)
+
+    else:
+        print('ENEMY')
+        enemy.attack(yusha)
+
     if (yusha.health <= 0 or enemy.health <= 0):
-        print('Stop')
+        if yusha.health <= 0:
+            print('COMPUTER WIN!')
+        elif enemy.health <= 0:
+            print('YOU WIN!')
         break
