@@ -13,7 +13,6 @@ class Hero:
         self.energy = energy
         Hero.all_hero.append(name)
         Hero.jum_hero += 1
-        # Hero.health += health
 
     def damage_up(self, plus):
         self.damage += plus
@@ -24,14 +23,15 @@ class Hero:
 
     def attack(self, enemy):
         enemy.attacked(self)
+        print('='*50)
         print(f'Your attack {enemy.name}')
-        print('Status :')
+        print('STATUS')
         print(f'Damage dault : {self.damage - enemy.defend}')
         print(f'Your energy  : {self.energy}')
         print(f'Your mana    : {self.mana}')
         print(f'Enemy health remaining : {enemy.health}')
+        print(f'Your Health Remaining : {self.health}')
+        print('='*50)
 
     def attacked(self, enemy):
-        print(f'{self.name} attacked {enemy.name}')
         self.health -= (enemy.damage - self.defend)
-        print(f'Your Health Remaining : {self.health}')
