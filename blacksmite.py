@@ -1,4 +1,5 @@
 from equipment import user
+from equipment import comp
 from class_prog import Hero
 from computer import computer
 
@@ -17,14 +18,26 @@ chose = int(input('Input Your Choise : '))
 match chose:
     case 1:
         alexa = Hero('Alexa', 100, 17, 10, 50, 50)
-        user.fundamental(chose, alexa)
+        yusha = user.fundamental(chose, alexa)
     case 2:
         zoldyck = Hero('Zoldyck', 120, 15, 7, 50, 50)
-        user.fundamental(chose, zoldyck)
+        yusha = user.fundamental(chose, zoldyck)
 
     case 3:
         lux = Hero('Lux', 90, 20, 10, 60, 30)
-        user.fundamental(chose, lux)
+        yusha = user.fundamental(chose, lux)
 
 print(f'Computer turn..')
-computer()
+enemy = computer()
+
+while True:
+    print('1. Attack')
+    print('2. Recovery')
+    turn = int(input('Choise : '))
+
+    if turn == 1:
+        yusha.attack(enemy)
+
+    if (yusha.health <= 0 or enemy.health <= 0):
+        print('Stop')
+        break
