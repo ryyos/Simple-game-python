@@ -49,6 +49,7 @@ class user:
         [health, armor] = user.armor_switch(chose, name)
         name.defend_up(health, armor)
         print(f'Atrribute Your Hero : \n{name.__dict__}')
+        return name
 
 
 class comp:
@@ -88,3 +89,4 @@ class comp:
         [health, armor] = comp.armor_switch(chose, name)
         name.defend_up(health, armor)
         print(f'Atrribute Your Hero : \n{name.__dict__}')
+        return name
